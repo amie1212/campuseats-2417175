@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Apple Design Language - CampusEats Theme
+   Apple Design Language - CampusEats Theme (iPhone & Mobile Optimized)
    ========================================================================== */
 
 :root {
@@ -11,11 +11,12 @@
   --apple-text-secondary: #86868b;
   --apple-text-tertiary: #6e6e73;
   --apple-border: rgba(0, 0, 0, 0.08);
-  --apple-border-subtle: rgba(0, 0, 0, 0.04);
+  --apple-border-subtle: rgba(0, 0, 0, 0.05);
   
   /* Apple Interactive Accents */
   --apple-blue: #0071e3;
   --apple-blue-hover: #0077ed;
+  --apple-blue-active: #005bb5;
   --apple-blue-subtle: #f0f6ff;
   
   /* Status Indicators */
@@ -40,6 +41,14 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  /* Prevent horizontal scroll bounce on iOS */
+  overflow-x: hidden;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -51,10 +60,11 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* ==========================================================================
-   Apple Frosted Glass Header
+   Apple Frosted Glass Header (iOS Notch & Dynamic Island Safe)
    ========================================================================== */
 .header {
   position: sticky;
@@ -64,14 +74,17 @@ body {
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   border-bottom: 1px solid var(--apple-border);
-  height: 50px;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+  transition: background-color 0.3s var(--ease-apple);
 }
 
 .header-inner {
   max-width: 980px;
-  height: 100%;
+  height: 50px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -85,6 +98,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+  user-select: none;
 }
 
 .apple-logo-mark {
@@ -95,7 +109,7 @@ body {
 .nav {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 18px;
 }
 
 .nav a {
@@ -109,9 +123,12 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  min-height: 38px;
+  padding: 4px 6px;
 }
 
-.nav a:hover {
+.nav a:hover,
+.nav a:active {
   opacity: 1;
   color: var(--apple-blue);
 }
@@ -132,40 +149,40 @@ body {
 .container {
   max-width: 980px;
   margin: 0 auto;
-  padding: 0 24px;
-  min-height: calc(100vh - 200px);
+  padding: 0 max(20px, env(safe-area-inset-right, 20px)) 0 max(20px, env(safe-area-inset-left, 20px));
+  min-height: calc(100vh - 220px);
 }
 
 .hero-section {
   text-align: center;
-  padding: 64px 16px 52px;
+  padding: 56px 12px 42px;
 }
 
 .hero-eyebrow {
   display: block;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--apple-text-tertiary);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .hero-headline {
-  font-size: 44px;
+  font-size: 42px;
   font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.08;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
   color: var(--apple-text-primary);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .hero-subheadline {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 400;
   line-height: 1.45;
   color: var(--apple-text-secondary);
-  max-width: 600px;
+  max-width: 580px;
   margin: 0 auto;
   letter-spacing: -0.012em;
 }
@@ -174,18 +191,19 @@ body {
    Bento Section Group
    ========================================================================== */
 .section-group {
-  margin-bottom: 48px;
+  margin-bottom: 42px;
 }
 
 .section-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
+  padding: 0 4px;
 }
 
 .section-header h2 {
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--apple-text-primary);
@@ -207,10 +225,10 @@ body {
   background-color: var(--apple-card-bg);
   border: 1px solid var(--apple-border-subtle);
   border-radius: var(--radius-card);
-  padding: 28px;
+  padding: 24px;
   box-shadow: var(--shadow-card);
   display: flex;
-  gap: 22px;
+  gap: 20px;
   align-items: center;
   transition: all 0.35s var(--ease-apple);
 }
@@ -221,18 +239,19 @@ body {
 }
 
 .thumb {
-  width: 60px;
-  height: 60px;
+  width: 58px;
+  height: 58px;
   background: linear-gradient(145deg, #1d1d1f 0%, #3a3a3c 100%);
   color: #ffffff;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   border-radius: var(--radius-squircle);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  user-select: none;
 }
 
 .vendor-body {
@@ -245,7 +264,7 @@ body {
   align-items: flex-start;
   margin-bottom: 6px;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px;
 }
 
 .eyebrow-tag {
@@ -259,7 +278,7 @@ body {
 }
 
 .vendor-title {
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--apple-text-primary);
   letter-spacing: -0.015em;
@@ -294,6 +313,7 @@ body {
   padding: 4px 12px;
   border-radius: var(--radius-pill);
   letter-spacing: -0.01em;
+  user-select: none;
 }
 
 .status-indicator {
@@ -327,14 +347,14 @@ body {
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  gap: 18px;
 }
 
 .menu-card {
   background-color: var(--apple-card-bg);
   border: 1px solid var(--apple-border-subtle);
   border-radius: var(--radius-card);
-  padding: 24px;
+  padding: 22px;
   box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
@@ -343,7 +363,7 @@ body {
 }
 
 .menu-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-hover);
 }
 
@@ -351,7 +371,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .menu-card .thumb {
@@ -377,11 +397,11 @@ body {
 
 .card-content {
   flex-grow: 1;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .card-title {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--apple-text-primary);
   letter-spacing: -0.015em;
@@ -399,7 +419,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 16px;
+  padding-top: 14px;
   border-top: 1px solid var(--apple-border-subtle);
   gap: 12px;
 }
@@ -425,21 +445,24 @@ body {
 }
 
 /* ==========================================================================
-   Apple Pill Button
+   Apple Pill Button (44px Minimum Touch Target for iOS)
    ========================================================================== */
 .btn {
   background-color: var(--apple-blue);
   color: #ffffff;
   border: none;
   border-radius: var(--radius-pill);
-  padding: 8px 18px;
+  min-height: 40px;
+  padding: 8px 20px;
   font-family: var(--font-family);
   font-size: 13px;
   font-weight: 500;
   letter-spacing: -0.01em;
   cursor: pointer;
+  touch-action: manipulation;
   transition: all 0.2s var(--ease-apple);
   white-space: nowrap;
+  user-select: none;
 }
 
 .btn:hover:not(:disabled) {
@@ -447,7 +470,8 @@ body {
 }
 
 .btn:active:not(:disabled) {
-  transform: scale(0.98);
+  transform: scale(0.96);
+  background-color: var(--apple-blue-active);
 }
 
 .btn:disabled {
@@ -458,13 +482,13 @@ body {
 }
 
 /* ==========================================================================
-   Apple Directory Footer
+   Apple Directory Footer (iOS Home Bar Indicator Safe)
    ========================================================================== */
 .footer {
   background-color: #f5f5f7;
   border-top: 1px solid var(--apple-border);
-  padding: 34px 24px;
-  margin-top: 64px;
+  padding: 34px 24px calc(24px + env(safe-area-inset-bottom, 16px));
+  margin-top: 56px;
   font-size: 12px;
   color: var(--apple-text-secondary);
   line-height: 1.5;
@@ -494,15 +518,18 @@ body {
   display: flex;
   gap: 10px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .footer-links a {
   color: var(--apple-text-secondary);
   text-decoration: none;
   transition: color 0.2s;
+  padding: 4px 0;
 }
 
-.footer-links a:hover {
+.footer-links a:hover,
+.footer-links a:active {
   color: var(--apple-text-primary);
   text-decoration: underline;
 }
@@ -514,4 +541,75 @@ body {
 .subtext {
   color: var(--apple-text-tertiary);
   font-size: 11px;
+}
+
+/* ==========================================================================
+   iPhone & Mobile Media Queries
+   ========================================================================== */
+@media (max-width: 640px) {
+  .header-inner {
+    padding: 0 16px;
+  }
+
+  .nav {
+    gap: 12px;
+  }
+
+  .nav a {
+    font-size: 12px;
+    padding: 4px 2px;
+  }
+
+  .hero-section {
+    padding: 38px 8px 30px;
+  }
+
+  .hero-headline {
+    font-size: 30px;
+    letter-spacing: -0.03em;
+  }
+
+  .hero-subheadline {
+    font-size: 15px;
+  }
+
+  .vendor-card {
+    padding: 18px;
+    gap: 14px;
+  }
+
+  .vendor-title {
+    font-size: 16px;
+  }
+
+  .thumb {
+    width: 48px;
+    height: 48px;
+    font-size: 19px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .menu-card {
+    padding: 18px;
+  }
+
+  .card-action {
+    padding-top: 14px;
+  }
+
+  .btn {
+    min-height: 42px;
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .footer-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
 }
