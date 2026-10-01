@@ -8,40 +8,46 @@ function App() {
     <>
       <Header />
       <main className="container">
-        <div className="hero-banner">
-          <h2>Order Ahead, Skip the Cafeteria Queue 🍽️</h2>
-          <p>Fresh meals prepared by your favourite Mahallah vendors, ready for pickup.</p>
-        </div>
+        {/* Apple-style Hero Showcase */}
+        <section className="hero-section">
+          <span className="hero-eyebrow">CampusEats &bull; Week 1 Checkpoint</span>
+          <h2 className="hero-headline">Pre-order seamlessly.<br />From your Mahallah.</h2>
+          <p className="hero-subheadline">
+            Skip long queues between lectures. Freshly prepared breakfast, lunch, and drinks ready right when you arrive.
+          </p>
+        </section>
 
-        <section className="section-block">
-          <div className="section-title-wrap">
+        {/* Today's vendors Section */}
+        <section className="section-group">
+          <div className="section-header">
             <h2>Today's vendors</h2>
-            <span className="badge-count">Featured Stall</span>
+            <span className="section-badge">1 Location</span>
           </div>
           <VendorCard />
         </section>
 
-        <section className="section-block">
-          <div className="section-title-wrap">
+        {/* Popular items Section */}
+        <section className="section-group">
+          <div className="section-header">
             <h2>Popular items</h2>
-            <span className="badge-count">Daily Specials</span>
+            <span className="section-badge">Curated Menu</span>
           </div>
           <div className="grid">
             <MenuItemCard
               name="Nasi Lemak Ayam Berempah"
-              description="Fragrant coconut rice, crispy spiced fried chicken, sambal, boiled egg & roasted peanuts"
+              description="Aromatic coconut rice, spiced crispy chicken, traditional sambal, boiled egg & roasted peanuts"
               price={8.0}
               available={true}
             />
             <MenuItemCard
               name="Roti Canai Telur Double"
-              description="Freshly grilled crispy flatbread with double eggs, served with rich dhal and sambal"
+              description="Crisp golden layered flatbread pan-grilled with double eggs, paired with aromatic dhal"
               price={4.0}
               available={true}
             />
             <MenuItemCard
               name="Teh Tarik Kaw"
-              description="Classic pulled milk tea with rich froth, brewed to traditional taste"
+              description="Rich pulled milk tea with silky froth, brewed with fragrant Ceylon black tea"
               price={2.5}
               available={false}
             />

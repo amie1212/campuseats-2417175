@@ -1,11 +1,22 @@
 function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-content">
-        <p className="copyright">
-          &copy; {new Date().getFullYear()} CampusEats &middot; BICS 3301, IIUM
+      <div className="footer-inner">
+        <div className="footer-meta">
+          <p className="copyright">
+            Copyright &copy; {new Date().getFullYear()} CampusEats Inc. All rights reserved. &middot; BICS 3301 Cross-Platform Architecture, IIUM
+          </p>
+          <div className="footer-links">
+            <a href="#">Privacy Policy</a>
+            <span className="separator">|</span>
+            <a href="#">Terms of Use</a>
+            <span className="separator">|</span>
+            <a href="#">Campus Dining Guidelines</a>
+          </div>
+        </div>
+        <p className="subtext">
+          Designed with an Apple-inspired clean aesthetic for mahallah cafeteria pre-ordering.
         </p>
-        <p className="tagline">Campus Pre-Order Web Application &bull; Mahallah Food Made Simple</p>
       </div>
     </footer>
   )

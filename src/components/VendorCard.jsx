@@ -9,20 +9,26 @@ function VendorCard() {
   return (
     <article className="vendor-card">
       <div className="thumb">{vendor.name[0]}</div>
-      <div className="vendor-details">
-        <div className="vendor-header">
-          <h3 className="vendor-name">{vendor.name}</h3>
+      <div className="vendor-body">
+        <div className="vendor-top-row">
+          <div>
+            <span className="eyebrow-tag">Featured Stall</span>
+            <h3 className="vendor-title">{vendor.name}</h3>
+          </div>
           <span className={`status ${vendor.isOpen ? 'open' : 'closed'}`}>
-            <span className="status-dot"></span>
+            <span className="status-indicator"></span>
             {vendor.isOpen ? 'Open now' : 'Closed'}
           </span>
         </div>
-        <p className="vendor-meta location">
-          <span className="meta-icon">📍</span> {vendor.location}
-        </p>
-        <p className="vendor-meta hours">
-          <span className="meta-icon">🕒</span> Open: {vendor.openHours}
-        </p>
+        <div className="vendor-details-row">
+          <p className="location">
+            <span className="detail-icon">📍</span> {vendor.location}
+          </p>
+          <span className="dot-separator">•</span>
+          <p className="hours">
+            <span className="detail-icon">🕒</span> Open: {vendor.openHours}
+          </p>
+        </div>
       </div>
     </article>
   )

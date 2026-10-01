@@ -1,36 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+/* ==========================================================================
+   Apple Design Language - CampusEats Theme
+   ========================================================================== */
 
 :root {
-  /* Brand Palette - Fresh Food Delivery Theme */
-  --primary: #ea580c;
-  --primary-hover: #c2410c;
-  --primary-light: #fff7ed;
-  --primary-subtle: #ffedd5;
+  /* Apple Neutral Color Palette */
+  --apple-bg: #fbfbfd;
+  --apple-card-bg: #ffffff;
+  --apple-nav-bg: rgba(255, 255, 255, 0.82);
+  --apple-text-primary: #1d1d1f;
+  --apple-text-secondary: #86868b;
+  --apple-text-tertiary: #6e6e73;
+  --apple-border: rgba(0, 0, 0, 0.08);
+  --apple-border-subtle: rgba(0, 0, 0, 0.04);
   
-  /* Neutral / Surface */
-  --header-bg: #0f172a;
-  --bg-page: #f8fafc;
-  --card-bg: #ffffff;
-  --text-main: #0f172a;
-  --text-muted: #64748b;
-  --border-color: #e2e8f0;
+  /* Apple Interactive Accents */
+  --apple-blue: #0071e3;
+  --apple-blue-hover: #0077ed;
+  --apple-blue-subtle: #f0f6ff;
   
-  /* Status */
-  --status-open-bg: #ecfdf5;
-  --status-open-text: #047857;
-  --status-open-border: #a7f3d0;
-  --status-closed-bg: #fef2f2;
-  --status-closed-text: #b91c1c;
-  --status-closed-border: #fecaca;
+  /* Status Indicators */
+  --status-open-bg: #eafaf1;
+  --status-open-text: #1b8738;
+  --status-closed-bg: #fdf2f2;
+  --status-closed-text: #d32f2f;
   
-  /* Typography & Shadows */
-  --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
-  --shadow-md: 0 4px 16px -2px rgba(15, 23, 42, 0.07), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
-  --shadow-lg: 0 12px 24px -4px rgba(15, 23, 42, 0.1), 0 4px 8px -2px rgba(15, 23, 42, 0.05);
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 20px;
+  /* Typography & Geometry */
+  --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --radius-pill: 980px;
+  --radius-card: 22px;
+  --radius-squircle: 16px;
+  
+  /* Apple Ambient Shadows */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+  --shadow-hover: 0 16px 36px rgba(0, 0, 0, 0.07), 0 4px 10px rgba(0, 0, 0, 0.03);
+  --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {
@@ -41,240 +44,261 @@
 
 body {
   font-family: var(--font-family);
-  background-color: var(--bg-page);
-  color: var(--text-main);
-  line-height: 1.6;
+  background-color: var(--apple-bg);
+  color: var(--apple-text-primary);
+  line-height: 1.47059;
+  letter-spacing: -0.022em;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ==========================================================================
-   Header & Navigation
+   Apple Frosted Glass Header
    ========================================================================== */
 .header {
-  background-color: var(--header-bg);
-  background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
-  color: #ffffff;
   position: sticky;
   top: 0;
-  z-index: 50;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  background-color: var(--apple-nav-bg);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--apple-border);
+  height: 50px;
 }
 
 .header-inner {
-  max-width: 960px;
+  max-width: 980px;
+  height: 100%;
   margin: 0 auto;
-  padding: 0.9rem 1.5rem;
+  padding: 0 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--apple-text-primary);
+  letter-spacing: -0.015em;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  letter-spacing: -0.5px;
+  gap: 8px;
 }
 
-.logo-icon {
-  font-size: 1.35rem;
+.apple-logo-mark {
+  color: var(--apple-text-primary);
+  flex-shrink: 0;
 }
 
 .nav {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 24px;
 }
 
 .nav a {
-  color: #cbd5e1;
+  color: var(--apple-text-primary);
+  opacity: 0.8;
   text-decoration: none;
-  font-size: 0.925rem;
-  font-weight: 600;
-  padding: 0.45rem 0.85rem;
-  border-radius: var(--radius-sm);
-  transition: all 0.2s ease;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  transition: opacity 0.2s var(--ease-apple), color 0.2s var(--ease-apple);
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 6px;
 }
 
 .nav a:hover {
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.08);
-}
-
-.cart-link {
-  background-color: rgba(234, 88, 12, 0.15);
-  color: #fdba74 !important;
-  border: 1px solid rgba(234, 88, 12, 0.3);
-}
-
-.cart-link:hover {
-  background-color: rgba(234, 88, 12, 0.25) !important;
-  color: #ffffff !important;
+  opacity: 1;
+  color: var(--apple-blue);
 }
 
 .badge {
-  background-color: var(--primary);
+  background-color: var(--apple-blue);
   color: #ffffff;
-  font-size: 0.75rem;
-  font-weight: 800;
-  padding: 0.15rem 0.55rem;
-  border-radius: 9999px;
-  line-height: 1.2;
-  box-shadow: 0 2px 6px rgba(234, 88, 12, 0.4);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 1px 7px;
+  border-radius: var(--radius-pill);
+  line-height: 1.3;
 }
 
 /* ==========================================================================
-   Main Container & Sections
+   Hero Section (Apple Keynote Style)
    ========================================================================== */
 .container {
-  max-width: 960px;
-  margin: 2rem auto;
-  padding: 0 1.5rem;
-  min-height: calc(100vh - 220px);
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 24px;
+  min-height: calc(100vh - 200px);
 }
 
-.hero-banner {
-  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
-  border: 1px solid #fed7aa;
-  border-radius: var(--radius-md);
-  padding: 1.5rem 1.75rem;
-  margin-bottom: 2.25rem;
-  box-shadow: var(--shadow-sm);
+.hero-section {
+  text-align: center;
+  padding: 64px 16px 52px;
 }
 
-.hero-banner h2 {
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: #9a3412;
-  margin-bottom: 0.3rem;
-  letter-spacing: -0.3px;
+.hero-eyebrow {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--apple-text-tertiary);
+  margin-bottom: 12px;
 }
 
-.hero-banner p {
-  font-size: 0.95rem;
-  color: #c2410c;
-  font-weight: 500;
-}
-
-.section-block {
-  margin-bottom: 2.5rem;
-}
-
-.section-title-wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.section-title-wrap h2 {
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: var(--text-main);
-  letter-spacing: -0.3px;
-}
-
-.badge-count {
-  font-size: 0.78rem;
+.hero-headline {
+  font-size: 44px;
   font-weight: 700;
-  background-color: #f1f5f9;
-  color: var(--text-muted);
-  padding: 0.25rem 0.65rem;
-  border-radius: 9999px;
-  border: 1px solid var(--border-color);
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  color: var(--apple-text-primary);
+  margin-bottom: 16px;
+}
+
+.hero-subheadline {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--apple-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  letter-spacing: -0.012em;
 }
 
 /* ==========================================================================
-   Vendor Card
+   Bento Section Group
+   ========================================================================== */
+.section-group {
+  margin-bottom: 48px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 18px;
+}
+
+.section-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--apple-text-primary);
+}
+
+.section-badge {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--apple-text-secondary);
+  background-color: rgba(0, 0, 0, 0.04);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+/* ==========================================================================
+   Vendor Card (Apple Bento Feature Card)
    ========================================================================== */
 .vendor-card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 1.35rem 1.5rem;
-  box-shadow: var(--shadow-md);
+  background-color: var(--apple-card-bg);
+  border: 1px solid var(--apple-border-subtle);
+  border-radius: var(--radius-card);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
   display: flex;
-  gap: 1.25rem;
+  gap: 22px;
   align-items: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.35s var(--ease-apple);
 }
 
 .vendor-card:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-hover);
 }
 
 .thumb {
-  width: 58px;
-  height: 58px;
-  background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(145deg, #1d1d1f 0%, #3a3a3c 100%);
   color: #ffffff;
-  font-size: 1.5rem;
-  font-weight: 800;
-  border-radius: 12px;
+  font-size: 24px;
+  font-weight: 600;
+  border-radius: var(--radius-squircle);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 10px rgba(234, 88, 12, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
-.vendor-details {
+.vendor-body {
   flex-grow: 1;
 }
 
-.vendor-header {
+.vendor-top-row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.4rem;
+  align-items: flex-start;
+  margin-bottom: 6px;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 12px;
 }
 
-.vendor-name {
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: var(--text-main);
-  letter-spacing: -0.2px;
+.eyebrow-tag {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--apple-blue);
+  margin-bottom: 2px;
 }
 
-.vendor-meta {
-  font-size: 0.88rem;
-  color: var(--text-muted);
+.vendor-title {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--apple-text-primary);
+  letter-spacing: -0.015em;
+}
+
+.vendor-details-row {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
-  margin-top: 0.15rem;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--apple-text-secondary);
+  flex-wrap: wrap;
+  margin-top: 4px;
 }
 
-.meta-icon {
-  font-size: 0.9rem;
+.dot-separator {
+  color: var(--apple-text-tertiary);
+  font-size: 10px;
+}
+
+.detail-icon {
+  font-size: 12px;
 }
 
 /* Status Chips */
 .status {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  font-size: 0.78rem;
-  font-weight: 700;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  letter-spacing: 0.2px;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  letter-spacing: -0.01em;
 }
 
-.status-dot {
-  width: 7px;
-  height: 7px;
+.status-indicator {
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   display: inline-block;
 }
@@ -282,176 +306,212 @@ body {
 .status.open {
   background-color: var(--status-open-bg);
   color: var(--status-open-text);
-  border: 1px solid var(--status-open-border);
 }
 
-.status.open .status-dot {
-  background-color: #10b981;
-  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3);
+.status.open .status-indicator {
+  background-color: #1b8738;
 }
 
 .status.closed {
   background-color: var(--status-closed-bg);
   color: var(--status-closed-text);
-  border: 1px solid var(--status-closed-border);
 }
 
-.status.closed .status-dot {
-  background-color: #ef4444;
+.status.closed .status-indicator {
+  background-color: #d32f2f;
 }
 
 /* ==========================================================================
-   Menu Items Grid & Cards
+   Popular Items Bento Grid
    ========================================================================== */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 
 .menu-card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 1.35rem;
-  box-shadow: var(--shadow-md);
+  background-color: var(--apple-card-bg);
+  border: 1px solid var(--apple-border-subtle);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  position: relative;
+  transition: all 0.35s var(--ease-apple);
 }
 
 .menu-card:hover {
   transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-hover);
 }
 
-.card-top {
+.card-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 0.85rem;
+  align-items: center;
+  margin-bottom: 18px;
 }
 
 .menu-card .thumb {
-  width: 48px;
-  height: 48px;
-  font-size: 1.3rem;
-  border-radius: 10px;
+  width: 44px;
+  height: 44px;
+  background: #f5f5f7;
+  color: var(--apple-text-primary);
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 12px;
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
-.category-tag {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  background-color: #f1f5f9;
-  color: var(--text-muted);
-  padding: 0.2rem 0.55rem;
-  border-radius: 6px;
+.stock-pill {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--apple-text-secondary);
+  background-color: #f5f5f7;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
 }
 
-.card-body {
+.card-content {
   flex-grow: 1;
-  margin-bottom: 1rem;
+  margin-bottom: 24px;
 }
 
-.item-title {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text-main);
-  margin-bottom: 0.35rem;
+.card-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--apple-text-primary);
+  letter-spacing: -0.015em;
+  margin-bottom: 6px;
   line-height: 1.35;
 }
 
 .description {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  line-height: 1.5;
+  font-size: 13px;
+  line-height: 1.48;
+  color: var(--apple-text-secondary);
 }
 
-.card-footer {
+.card-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--apple-border-subtle);
+  gap: 12px;
+}
+
+.price-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  padding-top: 0.85rem;
-  border-top: 1px dashed var(--border-color);
+}
+
+.price-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--apple-text-tertiary);
+  font-weight: 600;
 }
 
 .price {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #9a3412;
-  letter-spacing: -0.3px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--apple-text-primary);
+  letter-spacing: -0.02em;
 }
 
 /* ==========================================================================
-   Buttons
+   Apple Pill Button
    ========================================================================== */
 .btn {
-  background-color: var(--primary);
+  background-color: var(--apple-blue);
   color: #ffffff;
   border: none;
-  border-radius: 10px;
-  padding: 0.65rem 1rem;
+  border-radius: var(--radius-pill);
+  padding: 8px 18px;
   font-family: var(--font-family);
-  font-size: 0.92rem;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
   cursor: pointer;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 6px rgba(234, 88, 12, 0.2);
+  transition: all 0.2s var(--ease-apple);
+  white-space: nowrap;
 }
 
 .btn:hover:not(:disabled) {
-  background-color: var(--primary-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.35);
+  background-color: var(--apple-blue-hover);
 }
 
 .btn:active:not(:disabled) {
-  transform: translateY(0);
+  transform: scale(0.98);
 }
 
 .btn:disabled {
-  background-color: #f1f5f9;
-  color: #94a3b8;
-  border: 1px solid #e2e8f0;
-  box-shadow: none;
+  background-color: #f5f5f7;
+  color: #aeaeb2;
   cursor: not-allowed;
+  box-shadow: none;
 }
 
 /* ==========================================================================
-   Footer
+   Apple Directory Footer
    ========================================================================== */
 .footer {
-  background-color: #ffffff;
-  border-top: 1px solid var(--border-color);
-  padding: 2.25rem 1.5rem;
-  margin-top: 4rem;
-  text-align: center;
+  background-color: #f5f5f7;
+  border-top: 1px solid var(--apple-border);
+  padding: 34px 24px;
+  margin-top: 64px;
+  font-size: 12px;
+  color: var(--apple-text-secondary);
+  line-height: 1.5;
 }
 
-.footer-content {
-  max-width: 960px;
+.footer-inner {
+  max-width: 980px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 10px;
+}
+
+.footer-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .copyright {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--text-main);
+  font-weight: 400;
 }
 
-.tagline {
-  font-size: 0.8rem;
-  color: var(--text-muted);
+.footer-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.footer-links a {
+  color: var(--apple-text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--apple-text-primary);
+  text-decoration: underline;
+}
+
+.separator {
+  color: #d2d2d7;
+}
+
+.subtext {
+  color: var(--apple-text-tertiary);
+  font-size: 11px;
 }
