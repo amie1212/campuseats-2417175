@@ -3,14 +3,18 @@ function Header() {
 
   return (
     <header className="header">
-      <h1 className="logo">CampusEats</h1>
-      <nav className="nav">
-        <a href="#">Vendors</a>
-        <a href="#">My Orders</a>
-        <a href="#">
-          Cart <span className="badge">{cartCount}</span>
-        </a>
-      </nav>
+      <div className="header-inner">
+        <h1 className="logo">
+          <span className="logo-icon">🍽️</span> CampusEats
+        </h1>
+        <nav className="nav">
+          <a href="#">Vendors</a>
+          <a href="#">My Orders</a>
+          <a href="#" className="cart-link">
+            Cart <span className="badge">{cartCount}</span>
+          </a>
+        </nav>
+      </div>
     </header>
   )
 }
