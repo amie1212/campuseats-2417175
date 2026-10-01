@@ -1,2 +1,2 @@
-# campuseats-2417175
-Cross-Platform Development Project
+# campuseats-2417175-example
+Cross-Platform Development Project — CampusEats
