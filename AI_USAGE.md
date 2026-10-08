@@ -10,7 +10,7 @@ Add a new section every week, before you tag. Did not use AI? Write "None" under
 - One thing the AI got wrong and how I fixed it: App.jsx still attempted to import deleted assets from the initial Vite template; removed the unused imports and replaced with clean JSX.
 
 ## Week 2
-- Tool(s):
-- What I asked for:
-- What I kept, changed or rejected, and why:
-- One thing the AI got wrong and how I fixed it:
+- Tool(s): Antigravity (Gemini 3.8 Flash)
+- What I asked for: Assist in making CampusEats data-driven following Part C of the Week 1+2 checklist (vendors data, props, lists with .map(), switching vendors with state, and cart badge updates with onAdd).
+- What I kept, changed or rejected, and why: Kept the immutable state update pattern `setCart((prev) => [...prev, item])` instead of mutating arrays directly, and kept passing `onAdd` callback from App through MenuList to MenuItemCard. Used actual Mahallah Faruq and Mahallah Aminah stall data.
+- One thing the AI got wrong and how I fixed it: MenuItemCard button onClick initially needed an inline arrow function `() => onAdd(item)` to prevent premature execution during render; verified it properly fires only upon click.
