@@ -1,0 +1,167 @@
+[
+  {
+    "id": "2417175-kafe-faruq",
+    "name": "Kafe Mahallah Faruq",
+    "location": "Mahallah Faruq, Block B",
+    "openHours": "7:00 am - 10:00 pm",
+    "isOpen": true,
+    "menu": [
+      {
+        "id": "2417175-m1",
+        "name": "Nasi Lemak Ayam",
+        "description": "Coconut rice, crispy fried chicken, spicy sambal, boiled egg and peanuts",
+        "price": 7.5,
+        "category": "Rice",
+        "available": true,
+        "popular": true,
+        "special": true
+      },
+      {
+        "id": "2417175-m2",
+        "name": "Nasi Goreng Kampung",
+        "description": "Village-style fried rice with anchovies, water spinach and bird's eye chili",
+        "price": 7.0,
+        "category": "Rice",
+        "available": true,
+        "popular": false
+      },
+      {
+        "id": "2417175-m3",
+        "name": "Nasi Paprik Ayam",
+        "description": "Steamed white rice served with sweet, savoury and spicy chicken paprik",
+        "price": 8.0,
+        "category": "Rice",
+        "available": true,
+        "popular": false
+      },
+      {
+        "id": "2417175-m4",
+        "name": "Mee Goreng Mamak",
+        "description": "Yellow noodles stir-fried with tofu, vegetables, eggs and spicy mamak sauce",
+        "price": 6.0,
+        "category": "Noodles",
+        "available": true,
+        "popular": true
+      },
+      {
+        "id": "2417175-m5",
+        "name": "Bihun Sup Utara",
+        "description": "Rice vermicelli in fragrant herbal spiced beef broth with sambal merah",
+        "price": 6.5,
+        "category": "Noodles",
+        "available": true,
+        "popular": false
+      },
+      {
+        "id": "2417175-m6",
+        "name": "Kuey Teow Kerang",
+        "description": "Flat rice noodles wok-fried with fresh cockles, beansprouts and chives",
+        "price": 7.0,
+        "category": "Noodles",
+        "available": false,
+        "popular": false
+      },
+      {
+        "id": "2417175-m7",
+        "name": "Teh Tarik Kaw",
+        "description": "Authentic Malaysian pulled frothy milk tea",
+        "price": 2.5,
+        "category": "Drinks",
+        "available": true,
+        "popular": true
+      },
+      {
+        "id": "2417175-m8",
+        "name": "Kopi O Ais",
+        "description": "Local iced black coffee with rich roasted aroma",
+        "price": 2.2,
+        "category": "Drinks",
+        "available": true,
+        "popular": false
+      },
+      {
+        "id": "2417175-m9",
+        "name": "Roti Bakar Kaya Butter",
+        "description": "Toasted Hainanese bread with fragrant pandan kaya and butter slabs",
+        "price": 3.0,
+        "category": "Snacks",
+        "available": true,
+        "popular": false
+      }
+    ]
+  },
+  {
+    "id": "2415666-kafe-aminah",
+    "name": "Kafe Mahallah Aminah",
+    "location": "Mahallah Aminah, Ground Floor",
+    "openHours": "8:00 am - 9:00 pm",
+    "isOpen": true,
+    "menu": [
+      {
+        "id": "2415666-m1",
+        "name": "Nasi Ayam Penyet",
+        "description": "Smashed fried chicken with fiery terasi sambal, tempeh and rice",
+        "price": 9.0,
+        "category": "Rice",
+        "available": true,
+        "popular": true,
+        "special": true
+      },
+      {
+        "id": "2415666-m2",
+        "name": "Laksa Johor",
+        "description": "Spaghetti in rich spicy fish gravy garnished with fresh cucumber and herbs",
+        "price": 8.0,
+        "category": "Noodles",
+        "available": true,
+        "popular": false
+      },
+      {
+        "id": "2415666-m3",
+        "name": "Air Bandung Selasih",
+        "description": "Iced rose syrup with evaporated milk and basil seeds",
+        "price": 3.0,
+        "category": "Drinks",
+        "available": true,
+        "popular": true
+      }
+    ]
+  },
+  {
+    "id": "2410233-kafe-ali",
+    "name": "Kafe Mahallah Ali",
+    "location": "Mahallah Ali, Block C",
+    "openHours": "7:00 am - 10:00 pm",
+    "isOpen": true,
+    "menu": [
+      {
+        "id": "2410233-m1",
+        "name": "Roti Canai Telur",
+        "description": "Flaky layered flatbread folded with egg, served with dhal and curry",
+        "price": 3.0,
+        "category": "Breakfast",
+        "available": true,
+        "popular": true,
+        "special": true
+      },
+      {
+        "id": "2410233-m2",
+        "name": "Murtabak Daging",
+        "description": "Pan-fried stuffed bread with minced spiced beef, egg and pickled red onions",
+        "price": 7.5,
+        "category": "Breakfast",
+        "available": true,
+        "popular": false
+      },
+      {
+        "id": "2410233-m3",
+        "name": "Milo Ais Tabur",
+        "description": "Chilled chocolate malt beverage topped with generous powdered Milo",
+        "price": 3.5,
+        "category": "Drinks",
+        "available": true,
+        "popular": true
+      }
+    ]
+  }
+]
