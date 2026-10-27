@@ -16,4 +16,13 @@ What I kept, changed or rejected, and why: Kept the immutable state update patte
 One thing the AI got wrong and how I fixed it: MenuItemCard button onClick initially needed an inline arrow function () => onAdd(item) to prevent premature execution during render; verified it properly fires only upon click.
 
 Week 3
-Tool(s) : Antigravity (Gemini 3.8 Flash)
+Tool(s): Antigravity (Gemini 3.8 Flash)
+What I asked for: Implement asynchronous menu fetching using fetch() and AbortController, create a dedicated CartPage with item quantity modification/removal, build the CheckoutForm with multi-field validation (name, Mahallah, pickup time), and create the daily special banner with a live countdown timer.
+What I kept, changed or rejected, and why: Kept the custom validation function returning an errors object, cleanup function aborting pending network requests on unmount, and dynamic time calculation for countdown timer to 10:00 PM.
+One thing the AI got wrong and how I fixed it: Initial checkout form did not validate pickup time boundaries against operational hours (07:00 to 22:00); added range comparison checks in the validate function.
+
+Week 4
+Tool(s): Antigravity (Gemini 3.8 Flash)
+What I asked for: Assist with Week 4 implementation: extract custom hooks (useLocalStorage, useVendors, useCart), set up CartContext and CartProvider for cart and orders state persistence, set up React Router routes (/, /vendor/:id, /cart, /orders, *), Layout with Outlet, NavLink with active state, useNavigate after order placement, and implement personal feature 5 (showing today's specials on the home page linking to vendor pages with countdown).
+What I kept, changed or rejected, and why: Kept the extracted custom hooks with JSON try/catch resilience, clean context consumption with useCart() without prop drilling, nested route Layout structure with Outlet, and direct URL deep-linking support for vendors, cart, and orders.
+One thing the AI got wrong and how I fixed it: In useVendors, calling setState synchronously inside the effect body triggered an ESLint react-hooks/set-state-in-effect error; resolved it by initializing state cleanly and performing state updates inside reload() and the async promise resolution handlers.
