@@ -20,7 +20,7 @@ Use your matric number as the ID prefix (`2417175-kafe-faruq`, `2417175-m1`, …
 1. Open their `vendors.json` and copy **their own vendor object only** (the one whose id starts with their matric).
 2. Paste it **after** your shop in your `public/api/vendors.json` — keep a comma between objects and the file wrapped in `[ ... ]`.
 3. Add a credit line in `README.md` under "Credits":
-   `- **Kafe Mahallah Aminah** — copied from Ali bin Abu (2415666), https://github.com/alibinabu/campuseats-2415666`
+   `- **Kafe Mahallah Xxx** — copied from <Friend Name> (<matric>), https://github.com/<user>/<repo>`
 4. Check it works: `npm run dev`, open the home page and `/vendor/<their-id>`.
 5. Commit and push:
    ```bash
