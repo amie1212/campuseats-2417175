@@ -1,49 +1,35 @@
-# Collaborating on CampusEats
+# Sharing shops with classmates
 
-## 1. Get access (repo owner does this once)
-1. Open https://github.com/amie1212/campuseats-2417175 → **Settings** → **Collaborators** → **Add people**.
-2. Enter each friend's GitHub username or email. They accept the invite from their email or GitHub notifications.
-3. (Recommended) **Settings → Branches → Add rule** for `main`: tick *Require a pull request before merging*, so nobody pushes straight to `main`.
+The M1 report is **individual**: each person keeps **their own repo** and the code at
+the tag must be their own work. Collaboration means **exchanging shop data**
+(vendor entries in `public/api/vendors.json`), not editing each other's code.
 
-## 2. First-time setup (each friend)
-```bash
-git clone https://github.com/amie1212/campuseats-2417175.git
-cd campuseats-2417175
-npm install
-npm run dev
-```
+Rules from the M1 report template:
+- Classmates' shops **may** appear in your vendor list.
+- **Your shop must be first** in `vendors.json`.
+- Every copied shop **must be credited in `README.md`** (see the "Credits" section).
+- Every report screenshot must show **your own** shop.
 
-## 3. Daily workflow
-```bash
-git checkout main
-git pull origin main                 # get the latest code
-git checkout -b feature/<your-matric>-<short-name>
-# ...make changes...
-npm run lint
-git add .
-git commit -m "feat: describe what you did"
-git push -u origin feature/<your-matric>-<short-name>
-```
-Then open a **Pull Request** on GitHub into `main`, ask a teammate to review, and merge it.
+## 1. Share your shop
+Send friends the link to your vendor data, e.g.
+`https://github.com/amie1212/campuseats-2417175/blob/main/public/api/vendors.json`
+(your repo must be public, or add them under **Settings → Collaborators** so they can read it).
+Use your matric number as the ID prefix (`2417175-kafe-faruq`, `2417175-m1`, …) so IDs never clash.
 
-## 4. Adding your vendor
-Add your vendor object to `public/api/vendors.json`. Use your own matric number as the ID prefix so IDs never clash:
-```json
-{
-  "id": "<matric>-kafe-<name>",
-  "name": "Kafe Mahallah <Name>",
-  "location": "...",
-  "openHours": "8:00 am - 9:00 pm",
-  "isOpen": true,
-  "menu": [
-    { "id": "<matric>-m1", "name": "...", "description": "...", "price": 7.0,
-      "category": "Rice", "available": true, "popular": false }
-  ]
-}
-```
-Remember the comma between vendor objects, and add a line for your vendor to the README.
+## 2. Add a friend's shop to your repo
+1. Open their `vendors.json` and copy **their own vendor object only** (the one whose id starts with their matric).
+2. Paste it **after** your shop in your `public/api/vendors.json` — keep a comma between objects and the file wrapped in `[ ... ]`.
+3. Add a credit line in `README.md` under "Credits":
+   `- **Kafe Mahallah Aminah** — copied from Ali bin Abu (2415666), https://github.com/alibinabu/campuseats-2415666`
+4. Check it works: `npm run dev`, open the home page and `/vendor/<their-id>`.
+5. Commit and push:
+   ```bash
+   git add public/api/vendors.json README.md
+   git commit -m "feat: add classmate shop <name> (<matric>), credited in README"
+   git push origin main
+   ```
 
-## 5. Avoiding conflicts
-- Pull `main` before starting work, and keep pull requests small.
-- Only edit your own vendor in `vendors.json`.
-- If GitHub reports a merge conflict: `git pull origin main`, fix the files marked with `<<<<<<<`, then commit and push again.
+## 3. Before tagging `react-done`
+- Your shop is still first in the list.
+- Every copied shop has a credit line in the README.
+- `npm run lint` and `npm run build` pass.
