@@ -89,5 +89,87 @@
         "popular": false
       }
     ]
+  },
+  {
+    "id": "2414517-my-restaurant",
+    "name": "Rahmat Restaurant",
+    "location": "Mahallah Nusaibah, Ground Floor",
+    "openHours": "7:00 am - 10:00 pm",
+    "isOpen": true,
+    "menu": [
+      {
+        "id": "2414517-my-1",
+        "name": "Nasi Lemak Ayam Kampung",
+        "description": "Fried chicken with rich rice and served with soup",
+        "price": 7.5,
+        "category": "Rice",
+        "available": true
+      },
+      {
+        "id": "2414517-my-2",
+        "name": "Mee Hailam",
+        "description": "Yellow noodles served with thick broth",
+        "price": 6,
+        "category": "Noodles",
+        "available": true
+      },
+      {
+        "id": "2414517-my-3",
+        "name": "Sirap Bandung Soda",
+        "description": "Rose syrup with milk",
+        "price": 2.5,
+        "category": "Drinks",
+        "available": false
+      },
+      {
+        "id": "2414517-my-4",
+        "name": "Lai Chi Kang",
+        "description": "Refreshing Drink",
+        "price": 4,
+        "category": "Drinks",
+        "available": true
+      }
+    ]
+  },
+  {
+    "id": "2414517-kafe-aminah",
+    "name": "Kafe Mahallah Aminah",
+    "location": "Mahallah Aminah, Ground Floor",
+    "openHours": "8:00 am - 9:00 pm",
+    "isOpen": true,
+    "menu": [
+      {
+        "id": "2414517-ami-1",
+        "name": "Nasi Ayam Penyet",
+        "description": "Smashed fried chicken with sambal and rice",
+        "price": 7,
+        "category": "Rice",
+        "available": true
+      },
+      {
+        "id": "2414517-ami-2",
+        "name": "Air Bandung",
+        "description": "Rose syrup with milk",
+        "price": 3,
+        "category": "Drinks",
+        "available": true
+      },
+      {
+        "id": "2414517-ami-3",
+        "name": "Kopi Aminah",
+        "description": "Rich coffee with milk",
+        "price": 3,
+        "category": "Drinks",
+        "available": true
+      },
+      {
+        "id": "2414517-ami-4",
+        "name": "Nasi Kerabu",
+        "description": "Purple rice with vegetables and beef",
+        "price": 8,
+        "category": "Rice",
+        "available": true
+      }
+    ]
   }
 ]

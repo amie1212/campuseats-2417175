@@ -9,7 +9,7 @@ Campus cafeteria pre-ordering application built with React and Vite.
 <!-- Add one line per classmate shop you copy into public/api/vendors.json, e.g.
 - **Kafe Mahallah Xxx** — copied from <Classmate Name> (<matric>), https://github.com/<user>/<repo>
 -->
-_None yet._
+- **Rahmat Restaurant** and **Kafe Mahallah Aminah** — copied from classmate 2414517
 
 ## Running locally
 ```bash
