@@ -1,4 +1,4 @@
-
+/
 AI usage log
 
 Using AI never costs marks; a vague or missing log does. Add a new section every week, before you tag. Did not use AI? Write "None" under Tool(s).
